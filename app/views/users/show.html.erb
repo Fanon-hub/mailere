@@ -3,7 +3,9 @@
 <p>Email: <%= @user.email %></p>
 <p>Profile Image:</p>
 <% if @user.profile_image.attached? %>
-  <%= image_tag url_for(@user.profile_image), style: "width: 200px;" %>  
-<% else %>
+  <%= image_tag url_for(@user.profile_image) %>  
+<% end %>
+
+<% unless @user.profile_image.attached? %>
   <p>No profile image uploaded.</p>
 <% end %> 
